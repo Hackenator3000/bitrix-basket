@@ -4,6 +4,12 @@ npm install -g @vue/cli
 ```
 https://cli.vuejs.org/ru/guide/installation.html
 
+#Запуск Vue CLI
+
+```
+vue ui
+```
+
 # bitrix-basket
 
 ## Project setup
