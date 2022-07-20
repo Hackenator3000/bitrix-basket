@@ -1,10 +1,10 @@
-##установить Vue CLI
+## установить Vue CLI
 ```
 npm install -g @vue/cli
 ```
 https://cli.vuejs.org/ru/guide/installation.html
 
-##Запуск Vue CLI
+## Запуск Vue CLI
 
 ```
 vue ui
