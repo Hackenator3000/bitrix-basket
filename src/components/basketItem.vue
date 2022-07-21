@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col md:grid basket-order__item basket-order__row border
              border-weathered-stone rounded-sm p-4 mt-3">
-    <div class="flex"></div>
+    <div class="flex">{{ index }}</div>
     <div class="flex flex-col md:flex-row items-center">
       <img @click="test(item.ID)"
            class="w-14 h-14 md:mr-7"
@@ -61,6 +61,7 @@ export default {
   name: "basketItem",
   props: {
     BasketItem: Object,
+    index: null,
   },
   emits: [
     'basketUpdate'

@@ -1,5 +1,5 @@
 <template>
-  <div class="hidden md:flex flex-col">
+  <div class="hidden md:flex flex-col mb-12">
     <div class="search-form search max-w-none">
       <div class="search-wrapper">
         <input
@@ -7,6 +7,13 @@
             type="text"
             v-model="searchQuery"
             placeholder="Введите название, номер рисунка или артикул товара"/>
+        <svg @click="clearSearch" class="basket-item_trash cursor-pointer mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><g clip-path="url(#clip0)"><path d="M8.88393 8.00078L15.8169 1.06772C16.061 0.823631 16.061 0.427882 15.8169 0.18382C15.5729 -0.0602425
+          15.1771 -0.0602738 14.933 0.18382L7.99999 7.11687L1.06697 0.18382C0.822881 -0.0602738 0.427132 -0.0602738
+          0.18307 0.18382C-0.0609921 0.427913 -0.0610233 0.823662 0.18307 1.06772L7.11609 8.00075L0.18307
+          14.9338C-0.0610233 15.1779 -0.0610233 15.5736 0.18307 15.8177C0.305101 15.9397 0.465069 16.0007
+          0.625038 16.0007C0.785006 16.0007 0.944944 15.9397 1.06701 15.8177L7.99999 8.88468L14.933 15.8177C15.055
+          15.9397 15.215 16.0007 15.375 16.0007C15.5349 16.0007 15.6949 15.9397 15.8169 15.8177C16.061 15.5736 16.061
+          15.1779 15.8169 14.9338L8.88393 8.00078Z" fill="#191A1C"></path></g><defs><clipPath id="clip0"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>
         <span class="search-btn"></span>
       </div>
     </div>
@@ -25,7 +32,6 @@
     </ul>
   </div>
 </template>
-<!-- todo: кнопка очистки(сброса) поиска -->
 <script>
 import axios from "axios";
 import _ from "lodash";
@@ -53,6 +59,10 @@ export default {
               console.log(response.data)
             }
           })
+    },
+    clearSearch(){
+      this.searchQuery = '';
+      this.searchResult = [];
     },
     asyncFind: _.debounce(function (query){
       axios.get(`http://localhost:8080/BasketApi/search?q=${query}`, { withCredentials: true })

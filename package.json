@@ -12,9 +12,12 @@
     "core-js": "^3.8.3",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
+    "node-polyfill-webpack-plugin": "^2.0.0",
     "vue": "^3.2.13",
     "vue-axios": "^3.4.1",
-    "vue-multiselect": "^3.0.0-alpha.2"
+    "vue-multiselect": "^3.0.0-alpha.2",
+    "vue3-xlsx": "^1.1.2",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.18.9/xlsx-0.18.9.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
